@@ -8,6 +8,16 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+
+    def insert_at_beginning(self, val):
+        new_node = Node(val)
+        if self.head is None:
+            self.head = new_node
+
+        new_node.next = self.head
+        self.head = new_node
+
+
     # add node at the last position
     def insert_end(self, val):
         new_node = Node(val)
@@ -16,6 +26,7 @@ class LinkedList:
             curr = curr.next
 
         curr.next = new_node
+
 
     def insert_at_position(self, val, pos):
         temp = 1
@@ -41,6 +52,7 @@ class LinkedList:
 
         if curr:
             curr.next = curr.next.next
+
 
     def print(self):
         curr = self.head
