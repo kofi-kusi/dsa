@@ -57,4 +57,16 @@ class LinkedList:
     def print(self):
         curr = self.head
         while curr:
-            print(curr.val, "->")
+            print(curr.val, end="->")
+            curr = curr.next
+
+
+if __name__ == "__main__":
+    LL = LinkedList()
+    n1 = Node(4)
+    LL.head = n1
+    n2 = Node(8)
+    n1.next = n2
+    LL.insert_at_position(7, 1)
+    LL.insert_at_position(2, 0)
+    LinkedList.print(LL)
