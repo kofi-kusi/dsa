@@ -6,14 +6,23 @@ class ListNode:
         self.next = next
 
 def reversedList(head):
-    curr = head
-    prev = None
+    """
+    :param head: a Node instance
+    pre: previous node
+    cur: current node
+    suc: succeeding node
+    :return: a reversed linked list
+    """
+    pre = None
+    cur = head
+    suc = None
 
-    while curr is not None:
-        nextNode = curr.next
-        curr.next = prev
 
-        prev = curr
-        curr = nextNode
+    while cur:
+        suc = cur.next
+        cur.next = pre
+        pre = cur
+        cur = suc
 
-    return prev
+    head = pre
+    return head
