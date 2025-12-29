@@ -36,3 +36,18 @@ def quickSort_helper(my_array, start, end):
 
 
 print(quickSort([4, 1, 3, 7, 5, 2, 6]))
+
+
+#### Example 2: sorts an array of any length using a recursive approach
+def quickSort2(arr):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [i for i in arr[1:] if i <= pivot]
+        greater = [i for i in arr[1:] if i > pivot]
+        
+        return quickSort2(less) + [pivot] + quickSort2(greater)
+    
+print(quickSort2([4, 1, 3, 7, 5, 2, 6]))
+
