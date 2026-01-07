@@ -56,3 +56,5 @@ while node is not None:
 
     processed.add(node)
     node = find_lowest_cost_node(costs)
+
+print(costs['fin'])
